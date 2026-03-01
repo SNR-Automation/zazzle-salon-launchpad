@@ -6,12 +6,17 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
 let supabase: SupabaseClient;
 
 if (supabaseUrl && supabaseAnonKey) {
-  supabase = createClient(supabaseUrl, supabaseAnonKey);
+  supabase = createClient(supabaseUrl, supabaseAnonKey, {
+    global: {
+      headers: {
+        apikey: supabaseAnonKey,
+      },
+    },
+  });
 } else {
   console.warn(
     "Supabase credentials missing. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your .env file."
   );
-  // Create a dummy client that won't crash the app
   supabase = createClient("https://placeholder.supabase.co", "placeholder");
 }
 

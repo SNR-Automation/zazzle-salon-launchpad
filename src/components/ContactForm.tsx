@@ -45,10 +45,10 @@ const ContactForm = () => {
       setService("");
       setDate(undefined);
     } catch (err: any) {
-      console.error("Supabase insert error:", err);
+      console.error("Supabase insert error:", err?.message || err);
       toast({
         title: "Something went wrong",
-        description: "Please try again or contact us directly.",
+        description: err?.message || "Please try again or contact us directly.",
         variant: "destructive",
       });
     } finally {
