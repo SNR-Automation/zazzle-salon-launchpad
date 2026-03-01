@@ -1,4 +1,4 @@
-# Zazzle Salon
+# Zazzle Salon & Academy
 
 Premium unisex salon & bridal studio delivering stylish hair, beauty and bridal experiences since 2017.
 
