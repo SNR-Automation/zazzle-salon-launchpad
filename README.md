@@ -24,7 +24,8 @@ Zazzle Salon is a trusted destination for hair, beauty and bridal transformation
 | **Hours** | Daily 10:00 AM – 9:30 PM |
 
 ## Socials
-
 | | |
+|---|---|
+
 | **Instagram** | [https://www.instagram.com/zazzleacademy/](https://www.instagram.com/zazzleacademy/) |
 | **Linkedin** | [https://www.linkedin.com/company/zazzlesalons/](https://www.linkedin.com/company/zazzlesalons/) |
