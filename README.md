@@ -23,33 +23,6 @@ Zazzle Salon is a trusted destination for hair, beauty and bridal transformation
 | **Address** | B12, 11th Cross East Road, Above Sony Centre, Colony Street, West Thillai Nagar, Tennur, Tiruchirappalli, Tamil Nadu 620018 |
 | **Hours** | Daily 10:00 AM – 9:30 PM |
 
-## Tech Stack
-
-- React + TypeScript
-- Vite
-- Tailwind CSS + shadcn/ui
-- Supabase (database & auth)
-
-## Getting Started
-
-```sh
-# Install dependencies
-npm install
-
-# Copy environment file and fill in your Supabase credentials
-cp .env.example .env
-
-# Start development server
-npm run dev
-```
-
-## Supabase Setup
-
-1. Create a project at [supabase.com](https://supabase.com)
-2. Run the schema in `supabase/schema.sql` via the Supabase SQL Editor
-3. Copy your project URL and anon key into `.env`:
-   ```
-   VITE_SUPABASE_URL=https://your-project.supabase.co
-   VITE_SUPABASE_ANON_KEY=your-anon-key
-   ```
-
+## Socials
+| **Instagram** | [https://www.instagram.com/zazzleacademy/](https://www.instagram.com/zazzleacademy/) |
+| **Linkedin** | [https://www.linkedin.com/company/zazzlesalons/](https://www.linkedin.com/company/zazzlesalons/) |
