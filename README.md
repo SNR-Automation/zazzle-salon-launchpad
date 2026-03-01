@@ -25,7 +25,6 @@ Zazzle Salon is a trusted destination for hair, beauty and bridal transformation
 
 ## Socials
 
-| | |
 |---|---|
 | **Instagram** | [https://www.instagram.com/zazzleacademy/](https://www.instagram.com/zazzleacademy/) |
 | **Linkedin** | [https://www.linkedin.com/company/zazzlesalons/](https://www.linkedin.com/company/zazzlesalons/) |
