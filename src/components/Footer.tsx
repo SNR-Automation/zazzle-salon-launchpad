@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram, Linkedin } from "lucide-react";
 import zazzleLogo from "@/assets/zazzle-logo.png";
 
 const Footer = () => {
@@ -42,11 +42,11 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="font-serif text-lg font-semibold text-secondary-foreground mb-4">Follow Us</h3>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Instagram">
+              <a href="https://www.instagram.com/zazzleacademy/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Facebook">
-                <Facebook size={18} />
+              <a href="https://www.linkedin.com/company/zazzlesalons/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all" aria-label="LinkedIn">
+                <Linkedin size={18} />
               </a>
             </div>
           </div>
