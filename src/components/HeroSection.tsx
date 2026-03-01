@@ -14,9 +14,6 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center pt-20">
-        <p className="text-gold-light text-sm md:text-base tracking-[0.3em] uppercase mb-4 font-sans">
-          Thillainagar, Trichy
-        </p>
         <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl text-white leading-tight max-w-4xl mx-auto mb-6">
           Your glow-up starts here — hair, beauty & bridal magic in Thillainagar.
         </h1>

@@ -1,73 +1,55 @@
-# Welcome to your Lovable project
+# Zazzle Salon
 
-## Project info
+Premium unisex salon & bridal studio delivering stylish hair, beauty and bridal experiences since 2017.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## About
 
-## How can I edit this code?
+Zazzle Salon is a trusted destination for hair, beauty and bridal transformations located in the heart of Thillainagar, Trichy (Tiruchirappalli), Tamil Nadu.
 
-There are several ways of editing your application.
+## Services
 
-**Use Lovable**
+- **Haircuts & Styling** — Precision cuts and modern styling for men, women & kids
+- **Hair Treatments & Colour** — Keratin smoothening, global colour, highlights and premium hair treatments
+- **Beauty & Skin** — Rejuvenating facials, expert waxing and skin care treatments
+- **Bridal Packages** — Complete bridal makeup, pre-bridal treatments and groom packages
+- **Nails** — Professional manicures, pedicures, nail art and gel extensions
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Contact
 
-Changes made via Lovable will be committed automatically to this repo.
+| | |
+|---|---|
+| **Phone** | [86820 77777](tel:+918682077777) / [0431 421 6777](tel:+914314216777) |
+| **WhatsApp** | [wa.me/918682077777](https://wa.me/918682077777) |
+| **Address** | B12, 11th Cross East Road, Above Sony Centre, Colony Street, West Thillai Nagar, Tennur, Tiruchirappalli, Tamil Nadu 620018 |
+| **Hours** | Daily 10:00 AM – 9:30 PM |
 
-**Use your preferred IDE**
+## Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- React + TypeScript
+- Vite
+- Tailwind CSS + shadcn/ui
+- Supabase (database & auth)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Getting Started
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Copy environment file and fill in your Supabase credentials
+cp .env.example .env
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Supabase Setup
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Create a project at [supabase.com](https://supabase.com)
+2. Run the schema in `supabase/schema.sql` via the Supabase SQL Editor
+3. Copy your project URL and anon key into `.env`:
+   ```
+   VITE_SUPABASE_URL=https://your-project.supabase.co
+   VITE_SUPABASE_ANON_KEY=your-anon-key
+   ```
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

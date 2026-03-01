@@ -2,6 +2,7 @@ import { useState } from "react";
 import { format } from "date-fns";
 import { CalendarIcon, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/lib/supabase";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -15,21 +16,44 @@ const ContactForm = () => {
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
   const [date, setDate] = useState<Date>();
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone || !service) {
       toast({ title: "Please fill in all required fields", variant: "destructive" });
       return;
     }
-    toast({
-      title: "Appointment Requested! ✨",
-      description: `Thank you ${name}! We'll contact you shortly to confirm your ${service} appointment.`,
-    });
-    setName("");
-    setPhone("");
-    setService("");
-    setDate(undefined);
+
+    setLoading(true);
+    try {
+      const { error } = await supabase.from("appointments").insert({
+        name,
+        phone,
+        service,
+        preferred_date: date ? format(date, "yyyy-MM-dd") : null,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Appointment Requested! ✨",
+        description: `Thank you ${name}! We'll contact you shortly to confirm your ${service} appointment.`,
+      });
+      setName("");
+      setPhone("");
+      setService("");
+      setDate(undefined);
+    } catch (err: any) {
+      console.error("Supabase insert error:", err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -87,9 +111,9 @@ const ContactForm = () => {
               />
             </PopoverContent>
           </Popover>
-          <Button type="submit" className="w-full h-12 bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 font-sans">
+          <Button type="submit" disabled={loading} className="w-full h-12 bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 font-sans">
             <Send size={18} className="mr-2" />
-            Request Appointment
+            {loading ? "Submitting…" : "Request Appointment"}
           </Button>
         </form>
       </div>
