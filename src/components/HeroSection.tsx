@@ -18,7 +18,7 @@ const HeroSection = () => {
           Thillainagar, Trichy
         </p>
         <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl text-white leading-tight max-w-4xl mx-auto mb-6">
-          Luxury unisex salon and bridal studio in Thillainagar, delivering stylish hair, beauty and bridal experiences with premium ambience and expert care.
+          Your glow-up starts here — hair, beauty & bridal magic in Thillainagar.
         </h1>
         <p className="text-white/70 text-base md:text-lg max-w-2xl mx-auto mb-10 font-sans">
           Where elegance meets expertise — your trusted destination for hair, beauty & bridal transformations since 2017.
