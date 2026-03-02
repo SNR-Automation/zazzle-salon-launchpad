@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { useFadeIn } from "@/hooks/use-fade-in";
 
 const reviews = [
   {
@@ -34,8 +35,11 @@ const reviews = [
   },
 ];
 
+const avatarColors = ["#C5A45B", "#8B6914", "#A67C3D", "#D4AF61", "#B8860B"];
+
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
+  const { ref, isVisible } = useFadeIn();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -49,15 +53,40 @@ const Testimonials = () => {
 
   return (
     <section id="reviews" className="py-16 md:py-24 bg-secondary">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 fade-in-section${isVisible ? " visible" : ""}`}
+      >
+        <div className="text-center mb-6">
           <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3 font-sans">Client Love</p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground">What Our Clients Say</h2>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-gold-gradient underline-gold">
+            What Our Clients Say
+          </h2>
+        </div>
+
+        {/* Google badge */}
+        <div className="flex items-center justify-center gap-3 text-secondary-foreground/70 text-sm font-sans mb-12 mt-8">
+          <span className="text-lg">⭐</span>
+          <span className="font-semibold text-secondary-foreground">4.8 Rating</span>
+          <span className="text-secondary-foreground/30">|</span>
+          <span>5,300+ Reviews</span>
+          <span className="text-secondary-foreground/30">|</span>
+          <span>Rated #1 Salon in Thillainagar</span>
         </div>
 
         <div className="max-w-3xl mx-auto relative">
-          <div className="bg-secondary border border-primary/20 rounded-lg p-8 md:p-12 text-center min-h-[280px] flex flex-col items-center justify-center">
-            <Quote className="text-primary/30 w-10 h-10 mb-4" />
+          <div
+            className="bg-secondary border border-primary/20 p-8 md:p-12 text-center min-h-[280px] flex flex-col items-center justify-center"
+            style={{ borderRadius: "16px" }}
+          >
+            {/* Avatar */}
+            <div
+              className="w-14 h-14 rounded-full flex items-center justify-center text-white text-xl font-bold font-serif mb-4"
+              style={{ backgroundColor: avatarColors[current % avatarColors.length] }}
+            >
+              {reviews[current].name.charAt(0)}
+            </div>
+
             <span className="text-primary text-xs uppercase tracking-widest font-sans font-semibold mb-4">
               {reviews[current].highlight}
             </span>

@@ -9,9 +9,11 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useFadeIn } from "@/hooks/use-fade-in";
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const { ref, isVisible } = useFadeIn();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
@@ -56,30 +58,37 @@ const ContactForm = () => {
     }
   };
 
+  const inputClasses = "bg-card border-border h-14 px-5 rounded-xl font-sans focus:border-[#C5A45B] focus:ring-[3px] focus:ring-[#c5a45b]/20 transition-all";
+
   return (
     <section id="contact" className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 fade-in-section${isVisible ? " visible" : ""}`}
+      >
         <div className="text-center mb-12">
           <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3 font-sans">Get In Touch</p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">Request an Appointment</h2>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-gold-gradient underline-gold">
+            Request an Appointment
+          </h2>
         </div>
 
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-5">
+        <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-5 mt-10">
           <Input
             placeholder="Your Name *"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="bg-card border-border h-12 font-sans"
+            className={inputClasses}
           />
           <Input
             placeholder="Phone Number *"
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="bg-card border-border h-12 font-sans"
+            className={inputClasses}
           />
           <Select value={service} onValueChange={setService}>
-            <SelectTrigger className="bg-card border-border h-12 font-sans">
+            <SelectTrigger className={inputClasses}>
               <SelectValue placeholder="Select Service *" />
             </SelectTrigger>
             <SelectContent>
@@ -94,7 +103,7 @@ const ContactForm = () => {
             <PopoverTrigger asChild>
               <Button
                 variant="outline"
-                className={cn("w-full h-12 justify-start text-left font-normal bg-card border-border font-sans", !date && "text-muted-foreground")}
+                className={cn("w-full h-14 px-5 rounded-xl justify-start text-left font-normal bg-card border-border font-sans focus:border-[#C5A45B] focus:ring-[3px] focus:ring-[#c5a45b]/20", !date && "text-muted-foreground")}
               >
                 <CalendarIcon className="mr-2 h-4 w-4" />
                 {date ? format(date, "PPP") : "Preferred Date (Optional)"}
@@ -111,7 +120,11 @@ const ContactForm = () => {
               />
             </PopoverContent>
           </Popover>
-          <Button type="submit" disabled={loading} className="w-full h-12 bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 font-sans">
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full h-14 rounded-xl bg-gold-gradient text-white font-semibold text-base hover:brightness-110 transition-all font-sans shadow-lg"
+          >
             <Send size={18} className="mr-2" />
             {loading ? "Submitting…" : "Request Appointment"}
           </Button>

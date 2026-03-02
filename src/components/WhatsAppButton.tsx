@@ -8,7 +8,8 @@ const WhatsAppButton = () => {
       href={WHATSAPP_LINK}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-whatsapp text-white flex items-center justify-center shadow-lg animate-pulse-whatsapp hover:scale-110 transition-transform"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+      style={{ backgroundColor: "#1F7A4C" }}
       aria-label="Book via WhatsApp"
     >
       <MessageCircle size={26} />

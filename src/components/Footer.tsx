@@ -1,10 +1,16 @@
 import { MapPin, Phone, Clock, Instagram, Linkedin } from "lucide-react";
+import { useFadeIn } from "@/hooks/use-fade-in";
 import zazzleLogo from "@/assets/zazzle-logo.png";
 
 const Footer = () => {
+  const { ref, isVisible } = useFadeIn();
+
   return (
     <footer className="bg-secondary py-16 border-t border-primary/20">
-      <div className="container mx-auto px-4">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 fade-in-section${isVisible ? " visible" : ""}`}
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {/* Brand */}
           <div className="flex flex-col items-center md:items-start">
@@ -17,8 +23,8 @@ const Footer = () => {
           {/* Location */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="font-serif text-lg font-semibold text-secondary-foreground mb-4">Find Us</h3>
-            <p className="text-primary font-bold text-sm mb-2 font-sans">
-              📍 Local Landmark: Located directly above the Sony Centre.
+            <p className="text-sm mb-2 font-sans font-bold">
+              <span className="text-gold-gradient">📍 Local Landmark: Located directly above the Sony Centre.</span>
             </p>
             <div className="flex items-start gap-2 text-secondary-foreground/70 text-sm font-sans mb-4">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
